@@ -51,11 +51,10 @@ F:\University\sixth-semester\SUBD\LibraryManagementSystem\bin\roslyn\vbc.rsp
 F:\University\sixth-semester\SUBD\LibraryManagementSystem\bin\roslyn\VBCSCompiler.exe
 F:\University\sixth-semester\SUBD\LibraryManagementSystem\bin\roslyn\VBCSCompiler.exe.config
 F:\University\sixth-semester\SUBD\LibraryManagementSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\University\sixth-semester\SUBD\LibraryManagementSystem\bin\Newtonsoft.Json.dll
 F:\University\sixth-semester\SUBD\LibraryManagementSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 F:\University\sixth-semester\SUBD\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csproj.CoreCompileInputs.cache
 F:\University\sixth-semester\SUBD\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csproj.CopyComplete
 F:\University\sixth-semester\SUBD\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.dll
 F:\University\sixth-semester\SUBD\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.pdb
 F:\University\sixth-semester\SUBD\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csprojAssemblyReference.cache
-F:\University\sixth-semester\SUBD\LibraryManagementSystem\bin\Newtonsoft.Json.dll
-F:\University\sixth-semester\SUBD\LibraryManagementSystem\bin\Newtonsoft.Json.xml

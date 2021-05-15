@@ -15,6 +15,9 @@ namespace LibraryManagementSystem.librarian
 
             con.Open();
 
+            if (Session["librarian"] == null)
+                Response.Redirect("login.aspx");
+
             id = Convert.ToInt32(Request.QueryString["id"].ToString());
 
             SqlCommand cmd = con.CreateCommand();

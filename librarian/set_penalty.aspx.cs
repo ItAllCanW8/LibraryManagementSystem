@@ -14,6 +14,9 @@ namespace LibraryManagementSystem.librarian
 
             con.Open();
 
+            if (Session["librarian"] == null)
+                Response.Redirect("login.aspx");
+
             if (IsPostBack) return;
 
             SqlCommand cmd = con.CreateCommand();

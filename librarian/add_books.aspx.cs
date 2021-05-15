@@ -6,13 +6,16 @@ namespace LibraryManagementSystem.librarian
 {
     public partial class add_books : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\University\sixth-semester\SUBD\LibraryManagementSystem\App_Data\lms.mdf;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\lms.mdf;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
             if (con.State == ConnectionState.Open)
                 con.Close();
 
             con.Open();
+
+            if (Session["librarian"] == null)
+                Response.Redirect("login.aspx");
         }
 
         protected void b1_Click(object sender, EventArgs e)

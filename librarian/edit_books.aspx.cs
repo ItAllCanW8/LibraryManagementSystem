@@ -6,7 +6,7 @@ namespace LibraryManagementSystem.librarian
 {
     public partial class edit_books : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\University\sixth-semester\SUBD\LibraryManagementSystem\App_Data\lms.mdf;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\lms.mdf;Integrated Security=True");
         int id;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -14,6 +14,9 @@ namespace LibraryManagementSystem.librarian
                 con.Close();
 
             con.Open();
+
+            if (Session["librarian"] == null)
+                Response.Redirect("login.aspx");
 
             id = Convert.ToInt32(Request.QueryString["id"].ToString());
 

@@ -77,7 +77,15 @@
     </Content>
     <Content Include="librarian\activate_student.aspx" />
     <Content Include="librarian\add_books.aspx" />
+    <Content Include="librarian\load_messages.aspx" />
+    <Content Include="librarian\load_new_messages.aspx" />
+    <Content Include="librarian\logging.aspx" />
     <Content Include="librarian\logout.aspx" />
+    <Content Include="librarian\get_books_back.aspx" />
+    <Content Include="librarian\return_book.aspx" />
+    <Content Include="librarian\communication.aspx" />
+    <Content Include="librarian\send_from_librarian.aspx" />
+    <Content Include="librarian\send_message.aspx" />
     <Content Include="librarian\set_penalty.aspx" />
     <Content Include="librarian\assets\css\animate.css" />
     <Content Include="librarian\assets\css\bootstrap-select.css" />
@@ -1076,6 +1084,7 @@
     <Content Include="student\assets\scss\style.css" />
     <Content Include="student\assets\scss\variables.css" />
     <Content Include="student\assets\scss\widgets.css" />
+    <Content Include="student\communication.aspx" />
     <Content Include="student\demo.aspx" />
     <Content Include="student\display_books.aspx" />
     <Content Include="student\images\.gitignore" />
@@ -1857,7 +1866,10 @@
     <Content Include="student\images\placeholder.png" />
     <Content Include="student\images\twitter_corner_black.png" />
     <Content Include="student\images\twitter_corner_blue.png" />
+    <Content Include="student\load_messages.aspx" />
+    <Content Include="student\load_new_messages.aspx" />
     <Content Include="student\logout.aspx" />
+    <Content Include="student\send_from_student.aspx" />
     <Content Include="student\student_books.aspx" />
     <Content Include="student\student_login.aspx" />
     <Content Include="student\student_registration.aspx" />
@@ -1879,12 +1891,68 @@
     <Compile Include="librarian\add_books.aspx.designer.cs">
       <DependentUpon>add_books.aspx</DependentUpon>
     </Compile>
+    <Compile Include="librarian\load_messages.aspx.cs">
+      <DependentUpon>load_messages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="librarian\load_messages.aspx.designer.cs">
+      <DependentUpon>load_messages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="librarian\load_new_messages.aspx.cs">
+      <DependentUpon>load_new_messages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="librarian\load_new_messages.aspx.designer.cs">
+      <DependentUpon>load_new_messages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="librarian\logging.aspx.cs">
+      <DependentUpon>logging.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="librarian\logging.aspx.designer.cs">
+      <DependentUpon>logging.aspx</DependentUpon>
+    </Compile>
     <Compile Include="librarian\logout.aspx.cs">
       <DependentUpon>logout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="librarian\logout.aspx.designer.cs">
       <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="librarian\get_books_back.aspx.cs">
+      <DependentUpon>get_books_back.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="librarian\get_books_back.aspx.designer.cs">
+      <DependentUpon>get_books_back.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="librarian\return_book.aspx.cs">
+      <DependentUpon>return_book.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="librarian\return_book.aspx.designer.cs">
+      <DependentUpon>return_book.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="librarian\communication.aspx.cs">
+      <DependentUpon>communication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="librarian\communication.aspx.designer.cs">
+      <DependentUpon>communication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="librarian\send_from_librarian.aspx.cs">
+      <DependentUpon>send_from_librarian.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="librarian\send_from_librarian.aspx.designer.cs">
+      <DependentUpon>send_from_librarian.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="librarian\send_message.aspx.cs">
+      <DependentUpon>send_message.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="librarian\send_message.aspx.designer.cs">
+      <DependentUpon>send_message.aspx</DependentUpon>
     </Compile>
     <Compile Include="librarian\set_penalty.aspx.cs">
       <DependentUpon>set_penalty.aspx</DependentUpon>
@@ -1957,6 +2025,13 @@
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="student\communication.aspx.cs">
+      <DependentUpon>communication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\communication.aspx.designer.cs">
+      <DependentUpon>communication.aspx</DependentUpon>
+    </Compile>
     <Compile Include="student\demo.aspx.cs">
       <DependentUpon>demo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1971,12 +2046,33 @@
     <Compile Include="student\display_books.aspx.designer.cs">
       <DependentUpon>display_books.aspx</DependentUpon>
     </Compile>
+    <Compile Include="student\load_messages.aspx.cs">
+      <DependentUpon>load_messages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\load_messages.aspx.designer.cs">
+      <DependentUpon>load_messages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\load_new_messages.aspx.cs">
+      <DependentUpon>load_new_messages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\load_new_messages.aspx.designer.cs">
+      <DependentUpon>load_new_messages.aspx</DependentUpon>
+    </Compile>
     <Compile Include="student\logout.aspx.cs">
       <DependentUpon>logout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="student\logout.aspx.designer.cs">
       <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\send_from_student.aspx.cs">
+      <DependentUpon>send_from_student.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\send_from_student.aspx.designer.cs">
+      <DependentUpon>send_from_student.aspx</DependentUpon>
     </Compile>
     <Compile Include="student\student.Master.cs">
       <DependentUpon>student.Master</DependentUpon>

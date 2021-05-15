@@ -31,7 +31,10 @@ namespace LibraryManagementSystem.librarian
             i = Convert.ToInt32(dt.Rows.Count.ToString());
 
             if (i > 0)
-                Response.Redirect("demo.aspx");
+            {
+                Session["librarian"] = username.Text;
+                Response.Redirect("display_books.aspx");
+            }
             else
                 error.Style.Add("display", "block");
         }

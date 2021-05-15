@@ -1,6 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/librarian/librarian.Master" AutoEventWireup="true" CodeBehind="display_books.aspx.cs" Inherits="LibraryManagementSystem.librarian.display_books" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="c1" runat="server">
+
+    <link href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+
     <div class="col-lg-12">
         <div class="card">
             <div class="card-header">
@@ -10,7 +15,7 @@
 
                 <asp:Repeater ID="r1" runat="server">
                     <HeaderTemplate>
-                        <table class="table table-bordered">
+                        <table class="table table-bordered" id="example">
                             <thead>
                                 <tr>
                                     <th scope="col">image</th>
@@ -50,4 +55,15 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#example').DataTable({
+                "pagingType": "full_numbers"
+            });
+        });
+
+
+    </script>
+
 </asp:Content>

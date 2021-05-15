@@ -8,7 +8,7 @@ namespace LibraryManagementSystem.student
     {
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\lms.mdf;Integrated Security=True");
         string penalty = "0";
-        double numOfDays = 0;
+        double numOfDays;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (con.State == ConnectionState.Open)
@@ -47,7 +47,7 @@ namespace LibraryManagementSystem.student
 
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from issue_book where student_username='"+ Session["student"].ToString() + "'";
+            cmd.CommandText = "select * from issued_book where student_username='"+ Session["student"].ToString() + "'";
             cmd.ExecuteNonQuery();
 
             DataTable dt = new DataTable();
@@ -56,6 +56,8 @@ namespace LibraryManagementSystem.student
 
             foreach (DataRow dr in dt.Rows)
             {
+                numOfDays = 0;
+
                 DataRow dr_temp = dt_temp.NewRow();
                 dr_temp["student_enroll_num"] = dr["student_enroll_num"].ToString();
                 dr_temp["book_isbn"] = dr["book_isbn"].ToString();

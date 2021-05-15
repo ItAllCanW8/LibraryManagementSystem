@@ -14,6 +14,9 @@ namespace LibraryManagementSystem.librarian
 
             con.Open();
 
+            if (Session["librarian"] == null)
+                Response.Redirect("login.aspx");
+
             if (IsPostBack) return;
 
             enrnum.Items.Clear();
@@ -56,7 +59,7 @@ namespace LibraryManagementSystem.librarian
 
                 SqlCommand cmd0 = con.CreateCommand();
                 cmd0.CommandType = CommandType.Text;
-                cmd0.CommandText = "select * from issue_book where student_enroll_num='" + enrnum.SelectedItem.ToString() + "' and book_isbn='" + isbn.SelectedItem.ToString() + "' and is_book_returned='no'";
+                cmd0.CommandText = "select * from issued_book where student_enroll_num='" + enrnum.SelectedItem.ToString() + "' and book_isbn='" + isbn.SelectedItem.ToString() + "' and is_book_returned='no'";
                 cmd0.ExecuteNonQuery();
 
                 DataTable dt0 = new DataTable();
@@ -93,12 +96,15 @@ namespace LibraryManagementSystem.librarian
 
                         SqlCommand cmd3 = con.CreateCommand();
                         cmd3.CommandType = CommandType.Text;
-                        cmd3.CommandText = "insert into issue_book values('" + enrnum.SelectedItem.ToString() + "','" + isbn.SelectedItem.ToString() + "','" + books_issue_date.ToString() + "','" + approx_return_date.ToString() + "','" + username.ToString() + "','no','no')";
+                        cmd3.CommandText = "insert into issued_book values('" + enrnum.SelectedItem.ToString() + "','"
+                            + isbn.SelectedItem.ToString() + "','" + books_issue_date.ToString() + "','"
+                            + approx_return_date.ToString() + "','" + username.ToString() + "','no','no')";
                         cmd3.ExecuteNonQuery();
 
                         SqlCommand cmd4 = con.CreateCommand();
                         cmd4.CommandType = CommandType.Text;
-                        cmd4.CommandText = "update book set available_qty=available_qty-1 where book_isbn='" + isbn.SelectedItem.ToString() + "'";
+                        cmd4.CommandText = "update book set available_qty=available_qty-1 where book_isbn='" 
+                            + isbn.SelectedItem.ToString() + "'";
                         cmd4.ExecuteNonQuery();
 
                         Response.Write("<script>alert('book issued'); window.location.href=window.location.href;</script>");

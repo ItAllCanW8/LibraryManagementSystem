@@ -11,7 +11,8 @@ namespace LibraryManagementSystem.librarian
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["librarian"] == null)
+                Response.Redirect("login.aspx");
         }
     }
 }
